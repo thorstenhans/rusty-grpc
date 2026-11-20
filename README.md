@@ -1,3 +1,24 @@
-# gRPC server and client implementation in Rust
+# gRPC server and client in Rust with tonic
 
-This repository contains a gRPC server & client implementation written in Rust using the `tonic` crate. For further instructions on how it has been built and all the building blocks, check the corresponding blog post [https://www.thorsten-hans.com/grpc-services-in-rust-with-tonic/](https://www.thorsten-hans.com/grpc-services-in-rust-with-tonic/) or reach out on Twitter ([@ThorstenHans](https://twitter.com/ThorstenHans).)
+A gRPC server and client written in Rust with [tonic](https://github.com/grpc/grpc-rust). The code belongs to the blog post [How to Build a gRPC Server and Client in Rust with tonic](https://thorsten-hans.com/grpc-services-in-rust-with-tonic/).
+
+Tested with Rust 1.100 (edition 2024), tonic 0.14 and prost 0.14.
+
+## Prerequisites
+
+- Rust 1.88 or newer
+- `protoc`, the Protocol Buffers compiler (`brew install protobuf` or `apt install protobuf-compiler`). If it is not on your `PATH`, point the `PROTOC` environment variable at the binary.
+
+## Run it
+
+```bash
+# terminal 1
+cd server
+cargo run
+
+# terminal 2
+cd client
+cargo run
+```
+
+The client asks for a URL and an up or down vote, sends it to the server and prints the confirmation. Any other input ends the client.
